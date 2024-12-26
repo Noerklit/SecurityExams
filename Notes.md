@@ -40,3 +40,6 @@ And Bob can symmetrically use his knowledge of **A** and **b** to compute:
 $S = A^b = (g^a)^b = g^{ab}\ (mod\ p)$.  
 Should be noted that $g^{ba} = g^{ab}\ (mod\ p)$, so Alice and Bob ends up with the same result, **S**.  
 As far as we know, there is not an efficient algorithm to deduce $S = g^{ab}\ mod\ p$, based on the values the attacker sees $A = g^a \mod p,\ B = g^b \mod p,\ g,\ and\ p.$ Why this is hard is closely related to the discrete logarithm problem, as the fastest known algorithm for solving this particular problem is faar to slow for reasonable attacks.
+
+
+### TLS protocol

@@ -46,15 +46,16 @@ certificates.
 
 
 
-### Question 4
+### Question 4 - A large online shop handles thousands of credit card transactions per day. In order to reduce the risk of security breaches and protect their customers, this shop has deployed the TLS protocol on their web servers and enforces that customers can only access their website through this protocol. What security goals does this system achieve? Select one:
 
-#### a.
 
-#### b.
+#### a. Confidentiality only.
 
-#### c.
+#### b. Integrity and Confidentiality.
 
-#### d.
+#### c. Confidentiality and Availability.
+
+#### d. Integrity only.
 
 ### Question 5
 
