@@ -7,13 +7,20 @@
 - In a symmetric key model, Alice and Bob both know the value of a secret key, and they secure their communications using this shared secret value.
 - In an asymmetric key model, each person has a secret key and a corresponding public key.
 
-**Confidentiality, Integrity & Authenticity**
+**Confidentiality, Integrity, Authenticity & Availability**
 
-- Confidentiality is the security property preventing adversaries from reading our private data. If a message is confidential, then an attacker does not know its contents. Alice uses a key to lock the message in a box, sends the locked box over the insecure channel to Bob, who then uses the key to unlock the box, enabling him to see the message. So basically Alice encrypts message via key, so from plaintext to ciphertext. Encrypted message goes through insecure channel, Bob receives encrypted message and decrypts it via the key, back into plaintext.
+*As a side note it should be stated that the book states that Confidentiality, Integrity & Authenticity are the 3 main security properties in cryptography, whilst Bernado on slides has referred to Confidentiality, Integrity & Availability as the 3 security goals*
 
-- Integritry is the security property that prevents adversaries from tampering with our private data. If a message has integrity, an attacker is unable to change the content of the message without being detected. 
+- Availability is a core principle refering to ensuring systems, applications and data are accessible and usable by authorized users when they need them. Systems, networks and data must be operational and accessible to authorized users at all times or within agreed time-frames. Denying access to legitimate users is a failure of availability. Systems should have minimum downtime, this be whether there occurs hardware failure, software failure, natural disasters or failures due to malicious attacks. Systems should also have resilience against attacks, such as the ones listed below.
+Attacks towards availability: Denial of Service (DoS), distributed denial of service (DDoS).
 
-- Authenticity is the security property that lets us determine who created a given message. If a message has authenticity we can be sure that the message was written by the person claiming to have written it. 
+- Confidentiality is the security property preventing adversaries from reading our private data. If a message is confidential, then an attacker does not know its contents. Alice uses a key to lock the message in a box, sends the locked box over the insecure channel to Bob, who then uses the key to unlock the box, enabling him to see the message. So basically Alice encrypts message via key, so from plaintext to ciphertext. Encrypted message goes through insecure channel, Bob receives encrypted message and decrypts it via the key, back into plaintext.  
+Attacks towards confidentiality: eavesdropping (passive), man-in-the-middle (active)
+
+- Integritry is the security property that prevents adversaries from tampering with our private data. If a message has integrity, an attacker is unable to change the content of the message without being detected.  
+Attacks towards integrity: masquerading, message tampering, replaying.
+
+- Authenticity is the security property that lets us determine who created a given message. If a message has authenticity we can be sure that the message was written by the person claiming to have written it.  
 
 - Authenticity and Integritry are very close to each other. To prove a message is authentic you first have to prove it has not been altered, so they go hand in hand.
 Usually an algorithm would work something along the lines of: Alice generates a tag or a signature on a message. She sends the message with the tag to Bob. Bob receives the message and tag, verifies that the tag is valid for the mssage, and if the attacker has modified the message, the tag should no longer be valid, and Bob's verification will fail. An attacker should not be able to generate valid tags for their malicious messages.
@@ -43,3 +50,15 @@ As far as we know, there is not an efficient algorithm to deduce $S = g^{ab}\ mo
 
 
 ### TLS protocol
+Transport layer security is a protocol providing an end-to-end encrypted communication channel. End-to-end encryption guarantees that even if any one part of the communication is compromised, the packet could pass through a malicious Autonomous System (AS), nobody apart from the sender and receiver is able to read or modify the data being sent. 
+
+
+### Hashing
+Hashing is the process of converting input data (e.g., a password) into a fixed-length string of characters using a hash function (e.g., SHA-256).
+Hashing is:
+- Deterministic: The same input always produces the same output.
+- Irreversible: Hash functions are one-way; it is computationally infeasible to recover the original input from the hash output.
+- Collision-Resistant: It is hard to find two different inputs that produce the same hash.
+
+### Salt
+A salt is a random value added to the input data (e.g., a password) before hashing. Each password is salted with a unique value, ensuring that even if two users have the same password, their hash outputs will differ.
