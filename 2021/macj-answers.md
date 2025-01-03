@@ -133,7 +133,6 @@ This means the adversary cannot arbitrarily manipulate the output y without brea
 
 
 ### Question 9 - How are confidentiality, authenticity and integrity achieved by the TLS protocol? Select one:
-
 #### a. Confidentiality is achieved with a symmetric encryption scheme, integrity and authenticity are achieved by signing every message exchanged throughout the protocol with digital signatures.
 - The only thing incorrect here is that integrity is not achieved with digital signatures, but by the server and client exchanging and verifying MACs over all messages sent so far.
 
@@ -148,7 +147,6 @@ This means the adversary cannot arbitrarily manipulate the output y without brea
 
 
 ### Question 10
-
 #### a. Passwords that are only 16 characters long can easily be cracked by brute force attacks
 - 16 characters is long enough that the permutations make it quite hard to simply bruteforce a code.
 
@@ -164,48 +162,220 @@ This means the adversary cannot arbitrarily manipulate the output y without brea
 
 
 ### Question 11 - The following piece of code sends a request to openapi.com and assigns the data in the response to the href on the webpage. To which kind of attack is this piece of code vulnerable? Select one:
-
 ```
 let a = document.getElementById("myLink");
 fetch("openapi.com").then(res => a.href = res.data);
 ```
-
 #### a. None of the other alternatives.
+- This is just wrong
 
-#### b. XSS
+#### b. XSS (Correct)
+- Since the piece of codes directly inserts the response gotten from openapi.com, if the response is malicious, this will be put directly on
+the href on the webpage. This could end up being a link leading to a malicious script getting run, when the user clicks it. 
 
 #### c. SQL injection
+- This is not an instance of SQL commands being run on a database, and therefore SQL injection is not a vulnerability here.
 
 #### d. Command injection
+- Command injection exploits vulnerabilities where user input is executed as part of a system command. This code does not run system commands, so command injection is not relevant.
 
 
-### Question 12
+### Question 12 - Alice sends to Bob a commitment Com to a message m. Later on Alice opens the commitment, revealing a message m' and Bob accepts this message. Select the correct statement. Select one:
 
-### Question 13
+#### a. Bob can learn some bits of m by analysing Com.
+- The commitment itself should not reveal any information about the message. 
+
+#### b. The messages m and m' are equal. (Correct)
+- The messages should be equal, since Bob accepts the message. If the messages were not equal, Bob would be aware of this, and should not accept the message.
+
+#### c. Bob decrypts Com in order to obtain m'.
+- A commitment scheme does not involve decryption, the process instead involves validation. 
+
+#### d. Alice might have revealed a message m' different from m.
+- No when the key to a commitment is sent, they cannot change the content of the commitment without it being detected, so this would not be possible. 
+
+
+### Question 13 - Alice must sign a rent contract and digitally send it to her landlord. The landlord wants to be sure that it was indeed Alice who signed the contract. How can they accomplish this? Select one:
+
+#### a. Alice can generate a signature key pair sk,pk and send the contract along with her public key and a digital signature on the contract to the landlord. The landlord uses Alice’s public key to verify that the signature is valid with respect to her secret key and the contract.
+
+
+#### b. Alice can generate a signature key pair sk,pk, register her secret key in a Public Key Infrastructure (PKI) and send the contract along with a digital signature on the contract to the landlord. The landlord uses Alice’s secret key to verify that the signature on the contract is valid.
+
+
+#### c. Alice can generate a signature key pair sk,pk, register her public key in a Public Key Infrastructure (PKI) and send the contract along with a digital signature on the contract to the landlord. The landlord uses Alice’s public key to verify that the signature on the contract is valid.
+
+
+#### d. Alice can generate a signature key pair sk,pk, exchange her secret key with the landlord and send the contract along with a digital signature on the contract to the landlord. The landlord uses Alice’s secret key to recompute the signature and check that it is equal to the signature sent by Alice.
+
 
 ### Question 14
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 15
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 16
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 17
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 18
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 19
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 20
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 21
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 22
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 23
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 24
 
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
+
 ### Question 25
+
+#### a.
+
+
+#### b.
+
+
+#### c.
+
+
+#### d. 
+
 
 ### Question 26
 

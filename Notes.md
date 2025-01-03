@@ -62,3 +62,10 @@ Hashing is:
 
 ### Salt
 A salt is a random value added to the input data (e.g., a password) before hashing. Each password is salted with a unique value, ensuring that even if two users have the same password, their hash outputs will differ.
+
+### XSS
+
+
+### Command Injection
+
+### SQL Injection
